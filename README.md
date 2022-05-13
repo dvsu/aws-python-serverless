@@ -366,6 +366,14 @@ custom:
       description: Python requirements lambda layer
       #...
 
+# explicitly filter and select necessary files and directories
+package:
+  individually: true
+  excludeDevDependencies: true
+  patterns:
+    - "!./**" # exclude all files and directories
+    - "./src/**" # select only 'src' directory and its files and subdirectories
+
 # link lambda function to dependency layer
 functions:
   myhandler:
